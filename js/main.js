@@ -1,11 +1,17 @@
 
-const ZOOM = 2;
+const ZOOM = 1;
+var elem = (document.compatMode === "CSS1Compat") ? 
+    document.documentElement :
+    document.body;
+var width = elem.clientWidth;
+var height = elem.clientHeight -8; 
+console.log(width + " "+height);
 
 // Create the stage
 var stage = new Kinetic.Stage({
   container: 'container',
-  width: 512 * ZOOM,
-  height: 512 * ZOOM
+  width: width, //512 * ZOOM,
+  height: height //512 * ZOOM
 });
 
 // Background layer
@@ -16,8 +22,8 @@ imageObj.onload = function() {
     x: 0,
     y: 0,
     image: imageObj,
-    width: 512 * ZOOM,
-    height: 512 * ZOOM
+    width: width, //512 * ZOOM,
+    height: height //512 * ZOOM
   });
   layer.add(background);
   stage.add(layer);

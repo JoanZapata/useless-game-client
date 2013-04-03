@@ -30,8 +30,8 @@ var blob = null;
 var playerImg = new Image();
 playerImg.onload = function() {
   blob = new Kinetic.Sprite({
-    x: 250,
-    y: 40,
+    x: 0,
+    y: 0,
     scale: ZOOM,
     image: playerImg,
     animation: 'idle',
@@ -40,7 +40,6 @@ playerImg.onload = function() {
   });
 
   displayPlayer();
-
   layer.add(blob);
   stage.add(playerLayer);
   blob.start();
@@ -61,4 +60,4 @@ function displayPlayer(direction){
 }
 
 
-displayPlayer("bottom");
+displayPlayer("idle");
